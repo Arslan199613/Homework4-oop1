@@ -1,6 +1,5 @@
-import Car.Buses;
-import Car.Passenger;
-import Car.Truck;;
+import Car.*;
+;
 import Drivers.Driver;
 import Drivers.DriverB;
 import Drivers.DriverC;
@@ -9,20 +8,20 @@ import Drivers.DriverD;
 public class Main {
     public static void main(String[] args) {
 
-        Truck truck1 = new Truck("Volvo", "FL7", 3.0);
-        Truck truck2 = new Truck("Грузовик 1", "Большой", 3.0);
-        Truck truck3 = new Truck("Грузовик 2", "Огромный", 3.0);
-        Truck truck4 = new Truck("Грузовик 3", "Средний", 3.0);
+        Truck truck1 = new Truck("Volvo", "FL7", 3.0, TypeLoadCapacity.N1);
+        Truck truck2 = new Truck("Грузовик 1", "Большой", 3.0,TypeLoadCapacity.N2);
+        Truck truck3 = new Truck("Грузовик 2", "Огромный", 3.0,TypeLoadCapacity.N3);
+        Truck truck4 = new Truck("Грузовик 3", "Средний", 3.0,TypeLoadCapacity.N2);
 
-        Passenger car1 = new Passenger("Лада", "Гранта", 1.6);
-        Passenger car2 = new Passenger("Рено", "Логан", 1.8);
-        Passenger car3 = new Passenger("Хонда", "Цивик", 1.6);
-        Passenger car4 = new Passenger("Рено", "Каптур", 1.6);
+        Passenger car1 = new Passenger("Лада", "Гранта", 1.6,BodyType.SEDAN);
+        Passenger car2 = new Passenger("Рено", "Логан", 1.8,BodyType.SEDAN);
+        Passenger car3 = new Passenger("Хонда", "Цивик", 1.6,BodyType.SEDAN);
+        Passenger car4 = new Passenger("Рено", "Каптур", 1.6,BodyType.SEDAN);
 
-        Buses bus1 = new Buses("Автобус 1", "Большой", 1.8);
-        Buses bus2 = new Buses("Автобус 2", "Средний", 1.6);
-        Buses bus3 = new Buses("Автобус 3", "Маленький", 2.0);
-        Buses bus4 = new Buses("Автобус 3", "Красный", 1.8);
+        Buses bus1 = new Buses("Автобус 1", "Большой", 1.8,TypeCapacity.LARGE);
+        Buses bus2 = new Buses("Автобус 2", "Средний", 1.6,TypeCapacity.SMALL);
+        Buses bus3 = new Buses("Автобус 3", "Маленький", 2.0,TypeCapacity.ESPECIALLY_LARGE);
+        Buses bus4 = new Buses("Автобус 3", "Красный", 1.8,TypeCapacity.SMALL);
 
         System.out.println(truck1);
         System.out.println(truck2);
@@ -79,6 +78,10 @@ public class Main {
 
         aldonin.startMoving();
         semenov.finishTheMovement();
+
+        car1.PrintType();
+        truck3.PrintType();
+        bus1.PrintType();
 
 
     }

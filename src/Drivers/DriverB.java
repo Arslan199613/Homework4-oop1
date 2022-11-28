@@ -29,5 +29,10 @@ public class DriverB<B extends Passenger> extends Driver {
         System.out.printf("Водитель %s, управляет автомобилем %s %s и будет участвовать в заезде.\n", getFullName(), passenger.getBrand(), passenger.getModel());
 
     }
+
 }
+
+
+
+
 

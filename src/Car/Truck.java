@@ -1,8 +1,12 @@
 package Car;
 
 public class Truck extends Car implements Competing{
-    public Truck(String brand, String model, double engineCapacity) {
+
+    private TypeLoadCapacity typeLoadCapacity;
+    public Truck(String brand, String model, double engineCapacity,TypeLoadCapacity typeLoadCapacity) {
         super(brand, model, engineCapacity);
+        this.typeLoadCapacity = typeLoadCapacity;
+
     }
 
     @Override
@@ -11,6 +15,14 @@ public class Truck extends Car implements Competing{
 
     }
 
+    @Override
+    public void PrintType() {
+        if (typeLoadCapacity == null) {
+            System.out.println("Данных по грузовику недостаточно");
+        } else {
+            System.out.println("Тип кузова автобуса- " + typeLoadCapacity+":"+typeLoadCapacity.getFrom()+"-"+typeLoadCapacity.getTo());
+        }
+    }
     @Override
     public void startMoving() {
         System.out.println("Грузовик поехал");

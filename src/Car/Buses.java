@@ -1,10 +1,24 @@
 package Car;
 
 public class Buses extends Car implements Competing{
-    public Buses(String brand, String model, double engineCapacity) {
+    private TypeCapacity typeCapacity;
+    public Buses(String brand, String model, double engineCapacity,TypeCapacity typeCapacity) {
         super(brand, model, engineCapacity);
+        this.typeCapacity = typeCapacity;
     }
 
+    public TypeCapacity getTypeCapacity() {
+        return typeCapacity;
+    }
+
+    @Override
+    public void PrintType() {
+        if (typeCapacity == null) {
+            System.out.println("Данных по автобусу недостаточно");
+        } else {
+            System.out.println("Тип кузова автобуса- " + typeCapacity+":"+typeCapacity.getFrom()+"-"+typeCapacity.getTo());
+        }
+    }
     @Override
     public void finishTheMovement() {
         System.out.println("Автобус, заканчивай движения");

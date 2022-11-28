@@ -58,6 +58,7 @@ public abstract class Car {
             this.engineCapacity = engineCapacity;
         }
     }
+    public abstract void PrintType();
     public abstract void finishTheMovement();
     public abstract void startMoving();
 

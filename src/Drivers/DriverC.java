@@ -4,7 +4,6 @@ package Drivers;
 import Car.Truck;
 public class DriverC <C extends Truck> extends Driver {
 
-
     public DriverC(String fullName, String driverLicence, double experience) {
         super(fullName, driverLicence, experience);
     }
@@ -27,4 +26,5 @@ public class DriverC <C extends Truck> extends Driver {
     public void driverInfo(C truck) {
         System.out.printf("Водитель %s, управляет автомобилем %s %s и будет участвовать в заезде.\n", getFullName(), truck.getBrand(), truck.getModel());
     }
+
 }
