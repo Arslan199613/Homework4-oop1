@@ -28,6 +28,12 @@ public class Truck extends Car implements Competing{
         System.out.println("Грузовик поехал");
     }
 
+    @Override
+    public boolean passDiagnostics() {
+        return Math.random() > 0.75;
+
+    }
+
 
     @Override
     public String getPitStop() {

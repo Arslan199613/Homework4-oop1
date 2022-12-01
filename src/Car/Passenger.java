@@ -35,6 +35,11 @@ public class Passenger extends Car implements Competing {
     }
 
     @Override
+    public boolean passDiagnostics() {
+        return Math.random() > 0.;
+    }
+
+    @Override
     public String getPitStop() {
         return "Легковушка останавливается для заправки топливом";
     }

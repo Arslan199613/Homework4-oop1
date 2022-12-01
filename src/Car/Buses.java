@@ -1,8 +1,9 @@
 package Car;
 
-public class Buses extends Car implements Competing{
+public class Buses extends Car implements Competing {
     private TypeCapacity typeCapacity;
-    public Buses(String brand, String model, double engineCapacity,TypeCapacity typeCapacity) {
+
+    public Buses(String brand, String model, double engineCapacity, TypeCapacity typeCapacity) {
         super(brand, model, engineCapacity);
         this.typeCapacity = typeCapacity;
     }
@@ -16,9 +17,10 @@ public class Buses extends Car implements Competing{
         if (typeCapacity == null) {
             System.out.println("Данных по автобусу недостаточно");
         } else {
-            System.out.println("Тип кузова автобуса- " + typeCapacity+":"+typeCapacity.getFrom()+"-"+typeCapacity.getTo());
+            System.out.println("Тип кузова автобуса- " + typeCapacity + ":" + typeCapacity.getFrom() + "-" + typeCapacity.getTo());
         }
     }
+
     @Override
     public void finishTheMovement() {
         System.out.println("Автобус, заканчивай движения");
@@ -29,6 +31,12 @@ public class Buses extends Car implements Competing{
     public void startMoving() {
         System.out.println("Автобус, начинай движение");
 
+    }
+
+    @Override
+    public boolean passDiagnostics() {
+        System.out.println("Автобус "+getBrand()+" "+getModel()+ " в диагностике не требуется");
+        return true;
     }
 
     @Override

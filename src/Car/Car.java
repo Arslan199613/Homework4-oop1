@@ -8,22 +8,23 @@ public abstract class Car {
     private double engineCapacity;
 
     public Car(String brand, String model, double engineCapacity) {
-        if (!(brand ==null) && !brand.isEmpty() && !brand.isBlank()) {
+        if (!(brand == null) && !brand.isEmpty() && !brand.isBlank()) {
             this.brand = brand;
-        }else{
+        } else {
             this.brand = "Лада";
         }
         if (!(model == null) && !model.isEmpty() && !model.isBlank()) {
             this.model = model;
-        }else{
+        } else {
             this.model = "Ларгус";
         }
         if (engineCapacity < 0) {
             this.engineCapacity = 2.0;
-        }else {
+        } else {
             this.engineCapacity = engineCapacity;
         }
     }
+
     public String getBrand() {
         return brand;
     }
@@ -35,6 +36,7 @@ public abstract class Car {
             this.brand = "Лада";
         }
     }
+
     public String getModel() {
         return model;
     }
@@ -58,9 +60,14 @@ public abstract class Car {
             this.engineCapacity = engineCapacity;
         }
     }
+
     public abstract void PrintType();
+
     public abstract void finishTheMovement();
+
     public abstract void startMoving();
+
+    public abstract boolean passDiagnostics();
 
     @Override
     public String toString() {
@@ -81,5 +88,8 @@ public abstract class Car {
         return Objects.hash(brand, model, engineCapacity);
     }
 
+    public boolean service() {
+        return false;
+    }
 }
 
