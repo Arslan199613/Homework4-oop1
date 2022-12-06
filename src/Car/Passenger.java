@@ -4,7 +4,7 @@ public class Passenger extends Car implements Competing {
     private BodyType bodyType;
 
 
-    public Passenger(String brand, String model, double engineCapacity,BodyType bodyType) {
+    public Passenger(String brand, String model, double engineCapacity, BodyType bodyType) {
         super(brand, model, engineCapacity);
         this.bodyType = bodyType;
     }
@@ -37,6 +37,11 @@ public class Passenger extends Car implements Competing {
     @Override
     public boolean passDiagnostics() {
         return Math.random() > 0.;
+    }
+
+    @Override
+    public void repair() {
+        System.out.println("Машина " + getBrand() + " " + getModel() + " починена!");
     }
 
     @Override

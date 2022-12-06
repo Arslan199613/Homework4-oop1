@@ -1,11 +1,19 @@
 package Car;
 
+import Drivers.Driver;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Car {
     private String brand;
     private String model;
     private double engineCapacity;
+    private final List<Driver<?>> drivers = new ArrayList<>();
+    private final List<Mechanic<?>> mechanics = new ArrayList<>();
+    private final List<Sponsor> sponsors = new ArrayList<>();
 
     public Car(String brand, String model, double engineCapacity) {
         if (!(brand == null) && !brand.isEmpty() && !brand.isBlank()) {
@@ -23,6 +31,28 @@ public abstract class Car {
         } else {
             this.engineCapacity = engineCapacity;
         }
+    }
+
+    public List<Driver<?>> getDrivers() {
+        return drivers;
+    }
+
+    public List<Mechanic<?>> getMechanics() {
+        return mechanics;
+    }
+
+    public List<Sponsor> getSponsors() {
+        return sponsors;
+    }
+
+    public void addDriver(Driver<?>... drivers) {
+        this.drivers.addAll(Arrays.asList(drivers));
+    }
+    public void addMechanic(Mechanic<?>... mechanics) {
+        this.mechanics.addAll(Arrays.asList(mechanics));
+    }
+    public void addSponsor(Sponsor...sponsors) {
+        this.sponsors.addAll(Arrays.asList(sponsors));
     }
 
     public String getBrand() {
@@ -68,6 +98,8 @@ public abstract class Car {
     public abstract void startMoving();
 
     public abstract boolean passDiagnostics();
+    public abstract void repair();
+
 
     @Override
     public String toString() {

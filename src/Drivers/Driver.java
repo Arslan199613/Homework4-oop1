@@ -65,7 +65,7 @@ public abstract class Driver<C extends Category> {
 
     @Override
     public String toString() {
-        return "Водитель:" + fullName + ", наличие прав: " + driverLicence + ", со стажем-" + experience;
+        return fullName + ", наличие прав: " + driverLicence + ", со стажем-" + experience;
     }
 }
 

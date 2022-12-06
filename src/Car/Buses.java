@@ -40,6 +40,11 @@ public class Buses extends Car implements Competing {
     }
 
     @Override
+    public void repair() {
+        System.out.println("Автобус " + getBrand() + " " + getModel() + " починена!");
+    }
+
+    @Override
     public String getPitStop() {
         return "Автобус остановливается для проверки технического состояния";
     }
