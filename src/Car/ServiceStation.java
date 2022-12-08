@@ -1,13 +1,15 @@
 package Car;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Set;
 
 public class ServiceStation {
-    private final Queue<Car> cars = new LinkedList<>();
+    private Set<Car> cars = new HashSet<>();
 
     private void add(Car car) {
-        cars.offer(car);
+        cars.add(car);
     }
 
     public void addPassenger(Passenger passenger) {
@@ -16,16 +18,5 @@ public class ServiceStation {
 
     public void addTruck(Truck truck) {
         add(truck);
-    }
-
-    public void service() {
-        if (!cars.isEmpty()) {
-            Car car = cars.poll();
-            boolean result = car.service();
-            if (!result) {
-                car.repair();
-            }
-
-        }
     }
 }

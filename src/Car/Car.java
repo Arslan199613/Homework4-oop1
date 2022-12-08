@@ -2,18 +2,27 @@ package Car;
 
 import Drivers.Driver;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public abstract class Car {
     private String brand;
     private String model;
     private double engineCapacity;
-    private final List<Driver<?>> drivers = new ArrayList<>();
-    private final List<Mechanic<?>> mechanics = new ArrayList<>();
-    private final List<Sponsor> sponsors = new ArrayList<>();
+    private Set<Driver<?>> drivers = new HashSet<>();
+    private Set<Mechanic<?>> mechanics = new HashSet<>();
+    private Set<Sponsor> sponsors = new HashSet<>();
+
+    public Set<Driver<?>> getDrivers() {
+        return drivers;
+    }
+
+    public Set<Mechanic<?>> getMechanics() {
+        return mechanics;
+    }
+
+    public Set<Sponsor> getSponsors() {
+        return sponsors;
+    }
 
     public Car(String brand, String model, double engineCapacity) {
         if (!(brand == null) && !brand.isEmpty() && !brand.isBlank()) {
@@ -31,18 +40,7 @@ public abstract class Car {
         } else {
             this.engineCapacity = engineCapacity;
         }
-    }
 
-    public List<Driver<?>> getDrivers() {
-        return drivers;
-    }
-
-    public List<Mechanic<?>> getMechanics() {
-        return mechanics;
-    }
-
-    public List<Sponsor> getSponsors() {
-        return sponsors;
     }
 
     public void addDriver(Driver<?>... drivers) {
